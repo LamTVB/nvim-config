@@ -4,5 +4,5 @@
 vim.keymap.del("n", "<leader>fF")
 vim.keymap.del("v", "s")
 vim.keymap.del("n", "s")
-vim.keymap.set("n", " ", '<PageDown>', { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, " ", '<PageDown>', { noremap = true, silent = true })
 vim.keymap.set("n", "-", '<PageUp>', { noremap = true, silent = true })
