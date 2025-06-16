@@ -4,8 +4,8 @@ return {
     "jose-elias-alvarez/typescript.nvim",
     init = function()
       require("lazyvim.util").lsp.on_attach(function(_, buffer)
-          -- stylua: ignore
-          vim.keymap.set( "n", "<leader>co", "TypescriptOrganizeImports", { buffer = buffer, desc = "Organize Imports" })
+        -- stylua: ignore
+        vim.keymap.set("n", "<leader>co", "TypescriptOrganizeImports", { buffer = buffer, desc = "Organize Imports" })
         vim.keymap.set("n", "<leader>cR", "TypescriptRenameFile", { desc = "Rename File", buffer = buffer })
       end)
     end,
@@ -13,6 +13,7 @@ return {
   ---@class PluginLspOpts
   opts = {
     -- make sure mason installs the server
+    autoformat = false,
     servers = {
       --- @deprecated -- tsserver renamed to ts_ls but not yet released, so keep this for now
       --- the proper approach is to check the nvim-lspconfig release version when it's released to determine the server name dynamically
@@ -178,7 +179,7 @@ return {
         end, "vtsls")
         -- copy typescript settings to javascript
         opts.settings.javascript =
-          vim.tbl_deep_extend("force", {}, opts.settings.typescript, opts.settings.javascript or {})
+            vim.tbl_deep_extend("force", {}, opts.settings.typescript, opts.settings.javascript or {})
       end,
     },
   },
