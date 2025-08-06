@@ -21,6 +21,12 @@ require("lazy").setup({
     -- import/override with your plugins
     { import = "extras" },
     { import = "plugins" },
+    {
+      "LazyVim/LazyVim",
+      opts = {
+        colorscheme = "kanagawa",
+      },
+    }
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
@@ -35,7 +41,6 @@ require("lazy").setup({
     enabled = true, -- check for plugin updates periodically
     notify = true,  -- notify on update
   },                -- automatically check for plugin updates
-  install = { colorscheme = { 'gruvbox' } },
   performance = {
     rtp = {
       -- disable some rtp plugins

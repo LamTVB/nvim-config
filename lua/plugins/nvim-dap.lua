@@ -1,3 +1,9 @@
+-- Description: Configuration for nvim-dap, a debugging plugin for Neovim.
+-- This file sets up the DAP adapter for Node.js, configures DAP UI, and binds keys for debugging actions.
+-- Related sources:
+--  - https://www.johntobin.ie/blog/debugging_in_neovim_with_nvim-dap/#using-the-debugger
+--  - https://tamerlan.dev/a-guide-to-debugging-applications-in-neovim/
+--  - https://codeberg.org/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation#vscode-js-debug
 return {
   "mfussenegger/nvim-dap",
   event = "VeryLazy",
