@@ -1,3 +1,5 @@
 return {
-  "rebelot/kanagawa.nvim",
+  "folke/tokyonight.nvim",
+  lazy = true,
+  opts = { style = "night" },
 }

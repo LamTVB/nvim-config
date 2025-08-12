@@ -24,7 +24,7 @@ require("lazy").setup({
     {
       "LazyVim/LazyVim",
       opts = {
-        colorscheme = "kanagawa",
+        colorscheme = "tokyonight",
       },
     }
   },
@@ -39,7 +39,7 @@ require("lazy").setup({
   },
   checker = {
     enabled = true, -- check for plugin updates periodically
-    notify = true,  -- notify on update
+    notify = false, -- notify on update
   },                -- automatically check for plugin updates
   performance = {
     rtp = {
