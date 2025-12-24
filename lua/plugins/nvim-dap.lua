@@ -4,6 +4,12 @@
 --  - https://www.johntobin.ie/blog/debugging_in_neovim_with_nvim-dap/#using-the-debugger
 --  - https://tamerlan.dev/a-guide-to-debugging-applications-in-neovim/
 --  - https://codeberg.org/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation#vscode-js-debug
+vim.api.nvim_set_hl(0, 'DapStopped', { bg = "#993d3d", bold = true })
+
+vim.fn.sign_define("DapBreakpoint", { text = "🔥" })
+vim.fn.sign_define("DapStopped", { text = '▶️', texthl = 'DapStopped', linehl = 'DapStopped', numhl = 'DapStopped' })
+
+
 return {
   "mfussenegger/nvim-dap",
   event = "VeryLazy",
@@ -64,6 +70,20 @@ return {
     "theHamsta/nvim-dap-virtual-text",
   },
   keys = {
+    {
+      "<leader>du",
+      function()
+        require("dapui").toggle({})
+      end,
+      desc = "Dap UI"
+    },
+    {
+      "<leader>de",
+      function()
+        require("dapui").eval()
+      end,
+      desc = "Dap evaluation"
+    },
     {
       "<leader>db",
       function() require("dap").toggle_breakpoint() end,
