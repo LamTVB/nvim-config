@@ -16,6 +16,11 @@ return {
       file:close()
       return content
     end,
+    display = {
+      chat = {
+        show_settings = true,
+      }
+    },
     strategies = {
       chat = { adapter = "gemini" },
       inline = { adapter = "gemini" },
