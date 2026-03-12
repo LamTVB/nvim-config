@@ -1,5 +1,9 @@
 return {
   "sudo-tee/opencode.nvim",
+  keys = {
+    { "<leader>os", function() require("opencode.api").select_session() end, desc = "Select opencode session" },
+    { "<leader>on", function() require("opencode.api").open_input_new_session() end, desc = "New opencode session" },
+  },
   config = function()
     require("opencode").setup({})
   end,
